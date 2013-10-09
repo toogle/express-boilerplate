@@ -1,0 +1,83 @@
+extends layout
+
+append vars
+	title = "Home | " + title
+
+append styles
+	style.
+		.heading {
+			padding: 60px;
+			background-color: #222;
+		}
+
+		.heading-inner {
+			margin: 0 auto;
+			width: 50%;
+			text-align: center;
+		}
+		.heading-inner h1 {
+			margin: 0 0 20px;
+			color: #ddd;
+		}
+		.heading-inner p {
+			margin: 0 0 40px;
+			color: #ccc;
+		}
+
+		.heading-controls {
+			margin: 0 auto;
+			width: 40%;
+			color: #bbb;
+		}
+
+block content
+	.heading
+		.heading-inner
+			h1 Express Boilerplate
+			p.lead.
+				Built with Node.js, Express, Mongoose, Passport, Jade and others.
+				Bootstrap flavored.
+
+			.heading-controls
+				if user
+					| You're logged in as #{user.username}.&nbsp;
+					a(href="/signout") Sign out
+				else
+					a.btn.btn-success.btn-block.btn-large(href="/signup") Sign up
+					| Already have an account?&nbsp;
+					a(href="/signin") Sign in
+
+	.container-fluid
+		.row-fluid
+			.span4
+				h3 Lorem ipsum
+				p.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco
+					laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+					dolor in reprehenderit in voluptate velit esse cillum dolore eu
+					fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+			.span4
+				h3 Lorem ipsum
+				p.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco
+					laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+					dolor in reprehenderit in voluptate velit esse cillum dolore eu
+					fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+			.span4
+				h3 Lorem ipsum
+				p.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco
+					laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+					dolor in reprehenderit in voluptate velit esse cillum dolore eu
+					fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

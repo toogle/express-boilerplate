@@ -1,0 +1,17 @@
+{
+  "db": "mongodb://[[username]:password]@<host>[:port]/<database>",
+  "port": 8000,
+  "session key": "sid",
+  "session max age": "14 days",
+  "views dir": "{root}/views",
+  "static url": "/static",
+  "static dir": "{root}/public",
+  "twitter": {
+    "consumer key": "",
+    "consumer secret": ""
+  },
+  "facebook": {
+    "client id": "",
+    "client secret": ""
+  }
+}

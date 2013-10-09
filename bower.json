@@ -1,0 +1,13 @@
+{
+  "name": "express-boilerplate",
+  "description": "Express Boilerplate",
+  "version": "0.0.1",
+  "license": "GPLv3",
+  "author": {
+    "name": "Andrew A. Usenok",
+    "email": "tooogle@mail.ru"
+  },
+  "dependencies": {
+    "html5shiv": "latest"
+  }
+}

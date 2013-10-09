@@ -1,0 +1,63 @@
+extends layout
+
+append vars
+	title = "Sign in | " + title
+
+append styles
+	link(href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css", rel="stylesheet", media="all")
+
+	style.
+		form {
+			width: 30%;
+			margin: 0 auto;
+		}
+		input.input-lg {
+			height: 100%;
+			padding: 11px;
+			font-size: 18px;
+			line-height: 1.33;
+		}
+		.control-group {
+			margin: 10px 0 !important;
+		}
+
+block content
+	.container
+		form.form-horizontal(action="/signin", method="POST")
+			legend.text-center Sign in
+
+			if error
+				.alert.alert-error
+					strong Error!&nbsp;
+					span= error
+
+			.control-group
+				input.input-block-level.input-lg(
+					type="text", name="username", value=username, placeholder="Username",
+					required, autofocus
+				)
+
+			.control-group
+				input.input-block-level.input-lg(
+					type="password", name="password", placeholder="Password",
+					required
+				)
+
+			input(type="hidden", name="_csrf", value=csrfToken)
+
+			if back
+				input(type="hidden", name="back", value=back)
+
+			button.btn.btn-primary.btn-large.btn-block(type="submit") Submit
+
+			.text-center
+				h4 or
+
+				ul.nav.nav-pills.nav-stacked
+					li: a(href="/auth/twitter")
+						i.icon-twitter.icon-large
+						|  Sign in with Twitter
+
+					li: a(href="/auth/facebook")
+						i.icon-facebook.icon-large
+						|  Sign in with Facebook

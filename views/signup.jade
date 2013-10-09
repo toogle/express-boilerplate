@@ -1,0 +1,72 @@
+extends layout
+
+append vars
+	title = "Sign up | " + title
+
+append styles
+	link(href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css", rel="stylesheet", media="all")
+
+	style.
+		form {
+			width: 30%;
+			margin: 0 auto;
+		}
+		input.input-lg {
+			height: 100%;
+			padding: 11px;
+			font-size: 18px;
+			line-height: 1.33;
+		}
+		.control-group {
+			margin: 10px 0 !important;
+		}
+
+block content
+	.container
+		form.form-horizontal(action="/signup", method="POST")
+			legend.text-center Sign up
+
+			if error
+				.alert.alert-error
+					strong Error!&nbsp;
+					span= error
+
+			.control-group
+				input.input-block-level.input-lg(
+					type="text", name="username", value=username, placeholder="Username",
+					required, autofocus
+				)
+
+			.control-group
+				input.input-block-level.input-lg(
+					type="email", name="email", value=email, placeholder="Email",
+					required
+				)
+
+			.control-group
+				input.input-block-level.input-lg(
+					type="password", name="password", placeholder="Password",
+					required
+				)
+
+			.control-group
+				input.input-block-level.input-lg(
+					type="password", name="passwordCheck", placeholder="Password (again)",
+					required
+				)
+
+			input(type="hidden", name="_csrf", value=csrfToken)
+
+			button.btn.btn-primary.btn-large.btn-block(type="submit") Submit
+
+			.text-center
+				h4 or
+
+				ul.nav.nav-pills.nav-stacked
+					li: a(href="/auth/twitter")
+						i.icon-twitter.icon-large
+						|  Sign up with Twitter
+
+					li: a(href="/auth/facebook")
+						i.icon-facebook.icon-large
+						|  Sign up with Facebook
